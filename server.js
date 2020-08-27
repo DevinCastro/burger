@@ -14,7 +14,7 @@ app.use(express.json())
 app.engine('.hbs', require('express-handlebars')({ extname: '.hbs' }))
 app.set('view engine', '.hbs')
 
-// app.use(require('./controllers'))
+app.use(require('./controllers'))
 
 // let the app listen on a port
 app.listen(process.env.PORT || 3000)

@@ -34,4 +34,5 @@ orm.updateOne = (table, updates, where, cb) => {
   })
 }
 
-// Delete a burger
+
+module.exports = orm
