@@ -1,10 +1,8 @@
-DROP DATABASE IF EXISTS burgers_db;
-
-CREATE DATABASE burgers_db;
-
 USE burgers_db;
-CREATE TABLE burgers (
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  burger_name VARCHAR(30) NOT NULL
-  devoured BOOLEAN NOT NULL
-);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ('Double double', false),
+('Triple bacon cheeseburger', true),
+('Veggie burger', true),
+('Turkey burger', false),
+('Mushroom onion burger', false);
