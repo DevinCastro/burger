@@ -1,1 +1,69 @@
-<h1>Hello</h1>
+<div class="container">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Eat-Da-Burger</h1>
+
+    </div>
+  </div>
+
+
+{{!-- create a burger --}}
+
+<form>
+  <div class="form-group">
+    <label for="createBurger">Enter the burger you want to eat:</label>
+    <input type="text" class="form-control" id="burger">
+  </div>
+  <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+{{!-- display the burgers --}}
+  <div class="row">
+    {{!-- not devoured --}}
+    <div class="col-lg-6">
+      <ul id="notDevoured" class='list-group'>
+        <h2>Not Devoured:</h2>
+        {{!-- iterator --}}
+        {{#each burgers}}
+        {{!-- filter the DEVOURED burgers --}}
+        {{#unless this.devoured}}
+        <li id="{{ this.id }}" class="list-group-item list-group-item-primary">
+          Burger Name: {{ this.burger_name}}
+          <button class="btn btn-success devour">✓</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    {{!-- devoured --}}
+    <div class="col-lg-6">
+      <ul class='list-group'>
+        <h2>Devoured:</h2>
+        {{!-- iterator --}}
+        {{#each burgers}}
+        {{!-- filter the DEVOURED burgers --}}
+        {{#if this.devoured}}
+        <li id="{{ this.id }}" class="list-group-item list-group-item-success">
+          Burger Name: {{ this.burger_name }}
+          <button class="btn btn-danger delete">✓</button>
+        
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  {{!-- container --}}
+</div>
